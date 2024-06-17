@@ -1,0 +1,8 @@
+version: 2
+sources:
+  
+  - name: contemporani
+    database: raw-data-426221
+    schema: contemporani
+    tables:
+      - name: example

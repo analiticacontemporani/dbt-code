@@ -5,4 +5,6 @@ sources:
     database: raw-data-426221
     schema: contemporani
     tables:
-      - name: example
+      - name: admAlmacenes
+      - name: admCapasProducto
+      - name: admProductos

@@ -32,7 +32,9 @@ clasificaciones_valores as (
 
 select
     a.cnombrealmacen,
-    cv.cvalorclasificacion,
+    cv.cvalorclasificacion as tipo,
+    cv2.cvalorclasificacion as subtipo,
+    cv3.cvalorclasificacion as detalle,
     p.ccodigoproducto,
     p.cnombreproducto,
     cp.existencia,
@@ -42,5 +44,7 @@ from capas_producto cp
     left join almacenes a on a.cidalmacen = cp.cidalmacen
     left join productos p on p.cidproducto = cp.cidproducto
     left join clasificaciones_valores cv on cv.cidvalorclasificacion = p.cidvalorclasificacion1
+    left join clasificaciones_valores cv2 on cv2.cidvalorclasificacion = p.cidvalorclasificacion2
+    left join clasificaciones_valores cv3 on cv3.cidvalorclasificacion = p.cidvalorclasificacion3
 
 order by a.cidalmacen asc, cv.cvalorclasificacion asc, p.ccodigoproducto asc

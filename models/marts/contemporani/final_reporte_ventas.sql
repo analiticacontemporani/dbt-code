@@ -4,7 +4,9 @@ final as (
 
     select
         cnombrealmacen as Almacen,
-        cvalorclasificacion as Categoria,
+        tipo,
+        subtipo,
+        detalle,
         ccodigoproducto as Codigo,
         cnombreproducto as Producto,
         existencia as Existencia,
@@ -14,8 +16,4 @@ final as (
 
 )
 
-select *
-
-from final
-
-order by Almacen asc, Categoria asc, Producto asc
+select * from final

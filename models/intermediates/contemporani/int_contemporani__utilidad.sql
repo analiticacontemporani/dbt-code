@@ -39,7 +39,10 @@ productos as (
         ccodigoproducto,
         cnombreproducto,
         cstatusproducto,
-        proveedor
+        proveedor,
+        tipo,
+        subtipo,
+        detalle
 
     from {{ ref('int_contemporani_products_info') }}
 ),
@@ -75,7 +78,10 @@ data as (
         pro.ccodigoproducto as codigo_producto,
         pro.cnombreproducto as nombre_producto,
         pro.cstatusproducto as status_producto,
-        pro.proveedor
+        pro.proveedor,
+        pro.tipo,
+        pro.subtipo,
+        pro.detalle
 
     from documentos doc 
     join conceptos c
@@ -113,7 +119,10 @@ formulas as (
         codigo_producto,
         nombre_producto,
         status_producto,
-        proveedor
+        proveedor,
+        tipo,
+        subtipo,
+        detalle
 
         from data
 )

@@ -34,7 +34,8 @@ select
     p.ccodigoproducto,
     p.cnombreproducto,
     cp.existencia,
-    p.cprecio1
+    p.cprecio1,
+    p.tipo_base_de_datos
 
 from capas_producto cp
     left join almacenes a on a.cidalmacen = cp.cidalmacen

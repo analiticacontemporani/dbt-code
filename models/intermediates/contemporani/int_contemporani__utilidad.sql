@@ -42,7 +42,7 @@ productos as (
         proveedor,
         tipo,
         subtipo,
-        detalle
+        subsubtipo
 
     from {{ ref('int_contemporani_products_info') }}
 ),
@@ -81,7 +81,7 @@ data as (
         pro.proveedor,
         pro.tipo,
         pro.subtipo,
-        pro.detalle
+        pro.subsubtipo
 
     from documentos doc 
     join conceptos c
@@ -122,7 +122,7 @@ formulas as (
         proveedor,
         tipo,
         subtipo,
-        detalle
+        subsubtipo
 
         from data
 )

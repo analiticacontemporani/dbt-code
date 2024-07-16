@@ -20,21 +20,17 @@ capas_producto as (
 
 productos as (
 
-    select * from {{ ref('stg_contemporani__admProductos') }}
-
-),
-
-clasificaciones_valores as (
-
-    select * from {{ ref('stg_contemporani__admClasificacionesValores') }}
+    select * from {{ ref('int_contemporani_products_info') }}
 
 )
 
 select
     a.cnombrealmacen,
-    cv.cvalorclasificacion as tipo,
-    cv2.cvalorclasificacion as subtipo,
-    cv3.cvalorclasificacion as detalle,
+    a.ccodigoalmacen,
+    p.tipo,
+    p.subtipo,
+    p.subsubtipo,
+    p.proveedor,
     p.ccodigoproducto,
     p.cnombreproducto,
     cp.existencia,
@@ -43,8 +39,5 @@ select
 from capas_producto cp
     left join almacenes a on a.cidalmacen = cp.cidalmacen
     left join productos p on p.cidproducto = cp.cidproducto
-    left join clasificaciones_valores cv on cv.cidvalorclasificacion = p.cidvalorclasificacion1
-    left join clasificaciones_valores cv2 on cv2.cidvalorclasificacion = p.cidvalorclasificacion2
-    left join clasificaciones_valores cv3 on cv3.cidvalorclasificacion = p.cidvalorclasificacion3
 
-order by a.cidalmacen asc, cv.cvalorclasificacion asc, p.ccodigoproducto asc
+order by a.cidalmacen asc, p.ccodigoproducto asc

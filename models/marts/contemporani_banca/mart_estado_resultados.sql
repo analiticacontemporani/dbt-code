@@ -47,7 +47,7 @@ joins as (
         sc.* EXCEPT(cargos, abonos),
 
         case
-            when tipo = 'Resultados Deudora' then cargos - IFNULL(abonos, 0)
+            when tipo = 'Resultados Deudora' then (cargos - IFNULL(abonos, 0)) * -1
             when tipo = 'Resultados Acreedora' then abonos - IFNULL(cargos, 0)
             else -1
         end as importe

@@ -16,7 +16,8 @@ renamed as (
         cidmoneda,
         ccodigoproductoproveedor,
         cidunidad,
-        ctimestamp
+        
+        parse_date('%m/%d/%Y', substr(ctimestamp, 1, 10)) as fecha_compra
 
     from source
 

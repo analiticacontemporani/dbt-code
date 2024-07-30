@@ -6,15 +6,14 @@ almacenes as (
 
 ),
 
-capas_producto as (
+existencia_productos as (
 
     select
         cidproducto,
         cidalmacen,
-        sum(cexistencia) as existencia
-    from {{ ref('stg_contemporani__admCapasProducto') }}
-    where cexistencia > 0
-    group by cidproducto, cidalmacen
+        existencia
+    from {{ ref('stg_contemporani__admExistenciaCosto') }}
+    where existencia > 0
 
 ),
 
@@ -33,12 +32,12 @@ select
     p.proveedor,
     p.ccodigoproducto,
     p.cnombreproducto,
-    cp.existencia,
+    ep.existencia,
     p.cprecio1,
     p.tipo_base_de_datos
 
-from capas_producto cp
-    left join almacenes a on a.cidalmacen = cp.cidalmacen
-    left join productos p on p.cidproducto = cp.cidproducto
+from existencia_productos ep
+    left join almacenes a on a.cidalmacen = ep.cidalmacen
+    left join productos p on p.cidproducto = ep.cidproducto
 
 order by a.cidalmacen asc, p.ccodigoproducto asc

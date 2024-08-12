@@ -16,6 +16,7 @@ sources:
       - name: admClientes
       - name: admConceptos
       - name: admExistenciaCosto
+      - name: admTiposCambio
 
   - name: contemporani_banca
     database: raw-data-426221

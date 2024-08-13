@@ -9,11 +9,11 @@ source as (
 renamed as (
 
     select
-        cidexistencia,
+        --cidexistencia,
         cidalmacen,
         cidproducto,
         cidejercicio,
-        ctipoexistencia,
+        -- ctipoexistencia,
         centradasiniciales - csalidasiniciales as existencia
     from source
 

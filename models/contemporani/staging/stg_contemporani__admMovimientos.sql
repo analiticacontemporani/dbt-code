@@ -11,16 +11,17 @@ renamed as (
     select
         cidmovimiento,
         ciddocumento,
+        ciddocumentode,
         cidproducto,
         cidalmacen,
         cunidades,
         cunidadescapturadas,
         ccostoespecifico,
         cneto,
+        ctotal,
         cdescuento1
 
         -- cnumeromovimiento,
-        -- ciddocumentode,
         -- cunidadesnc,
         -- cidunidad,
         -- cidunidadnc,
@@ -46,7 +47,6 @@ renamed as (
         -- cporcentajedescuento4,
         -- cdescuento5,
         -- cporcentajedescuento5,
-        -- ctotal,
         -- cporcentajecomision,
         -- creferencia,
         -- cobservamov,

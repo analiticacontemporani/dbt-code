@@ -14,7 +14,7 @@ renamed as (
         cidproducto,
         cidejercicio,
         -- ctipoexistencia,
-        centradasiniciales - csalidasiniciales as existencia
+        CENTRADASPERIODO12 - CSALIDASPERIODO12 as existencia
     from source
 
 ),

@@ -20,6 +20,7 @@ existencia_productos as (
 productos as (
 
     select * from {{ ref('int_contemporani_products_info') }}
+    where cstatusproducto = 1
 
 )
 
@@ -37,7 +38,9 @@ select
     p.tipo_base_de_datos
 
 from existencia_productos ep
-    left join almacenes a on a.cidalmacen = ep.cidalmacen
-    left join productos p on p.cidproducto = ep.cidproducto
+join almacenes a 
+    on a.cidalmacen = ep.cidalmacen
+join productos p 
+    on p.cidproducto = ep.cidproducto
 
 order by a.cidalmacen asc, p.ccodigoproducto asc

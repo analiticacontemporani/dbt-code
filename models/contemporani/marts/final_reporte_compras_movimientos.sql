@@ -16,11 +16,12 @@ select
     doc.ciddocumento,
     doc.cidconceptodocumento,
     doc.cfecha,
+    doc.ctipocambio,
     doc.crazonsocial,
     mov.cidmovimiento,
     mov.cunidades,
     mov.ccostoespecifico,
-    mov.cneto,
+    mov.cneto * doc.ctipocambio as cneto_pesos,
     prod.ccodigoproducto,
     prod.cnombreproducto,
     prod.ctipoproducto, 
@@ -31,8 +32,8 @@ select
     prod.proveedor
 
 from documentos doc
-join movimientos_compras mov
+left join movimientos_compras mov
     on doc.ciddocumento = mov.ciddocumento
-join productos prod
+left join productos prod
     on mov.cidproducto = prod.cidproducto
 order by doc.cfecha desc, doc.ciddocumento, mov.cidmovimiento, prod.ccodigoproducto

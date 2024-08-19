@@ -13,6 +13,7 @@ select
     cidconceptodocumento,
     cfecha,
     crazonsocial,
+    ctipocambio,
     cgasto1 as importacion,
     cgasto2 as agente_aduanal,
     cgasto3 as flete,
@@ -21,3 +22,4 @@ select
     cneto * ctipocambio as cneto_pesos
     
 from documentos_compras
+order by cfecha desc

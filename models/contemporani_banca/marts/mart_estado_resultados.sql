@@ -15,7 +15,7 @@ saldos_cuentas as (
 
     where 
         tipo in ('Resultados Deudora', 'Resultados Acreedora')
-        and cuenta_mayor = 'Mayor'
+        and (cuenta_mayor = 'Mayor'  or id in(889, 890)) -- Deberia ser cuenta mayor
 ),
 
 asociaciones as (

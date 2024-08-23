@@ -1,5 +1,3 @@
--- Falta:
-    -- Revisar como identificar de donde fue la venta San Pedro / Cancun
 with
 
 documentos as (

@@ -1,8 +1,7 @@
 with 
 
 productos as (
-    select *
-    from {{ ref('stg_contemporani__admProductos') }}
+    select * from {{ ref('stg_contemporani__admProductos') }}
 ),
 
 clasificaciones_valores as (

@@ -1,3 +1,4 @@
+-- Obtener los movimientos pertenecientes a los documentos de compras
 with
 
 movimientos_compras as (

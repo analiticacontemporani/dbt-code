@@ -1,3 +1,7 @@
+-- Modelo que extrae todas las propiedades de los productos y sus clasificaciones
+    -- Crea las nuevas categorias definidas por el cliente
+
+-- Se creo ya que es siguiendo el principio DRY ya que esta informacion se requiere para todos los modelos
 with 
 
 productos as (

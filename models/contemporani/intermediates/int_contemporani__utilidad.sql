@@ -1,3 +1,7 @@
+-- Obtener los documentos de Facturas y devolucion sobre ventas
+    -- los movimientos que pertenecen a estos documentos
+    -- los productos y almacenes
+    -- y calcular la venta neta, margen y utilidad
 with
 
 documentos as (

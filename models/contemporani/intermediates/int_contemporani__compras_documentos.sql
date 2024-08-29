@@ -1,3 +1,4 @@
+-- Obtener los documentos solamente de compras
 with
 
 documentos_compras as (

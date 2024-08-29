@@ -1,3 +1,4 @@
+-- Obtener la existencia para cada producto de cada almacen
 with 
 
 almacenes as (
@@ -13,14 +14,14 @@ existencia_productos as (
         cidalmacen,
         existencia
     from {{ ref('stg_contemporani__admExistenciaCosto') }}
-    where existencia > 0
+    where existencia > 0 -- Solo productos que tengan existencia
 
 ),
 
 productos as (
 
     select * from {{ ref('int_contemporani_products_info') }}
-    where cstatusproducto = 1
+    where cstatusproducto = 1 -- Solo productos que esten activos
 
 )
 

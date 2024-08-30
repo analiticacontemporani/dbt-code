@@ -139,7 +139,6 @@ bg_todo AS (
 
     WHERE
         fecha_periodo IS NOT NULL -- Quitar cuentas que nunca tuvieron movimientos
-        AND SC.value != 0 --Quitar cuentas que no tuvieron saldos o movimientos en cierto periodo
     GROUP BY 
         C.id,
         C.Codigo,

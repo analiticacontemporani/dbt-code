@@ -13,9 +13,8 @@ renamed as (
         ciddocumentode,
         cidconceptodocumento,
         cseriedocumento, 
- 
-        DATE(TIMESTAMP_SECONDS(CAST(cfecha / 1000000000 AS INT64))) AS cfecha,
-        --date(timestamp(datetime(timestamp(cfecha), "America/Mexico_City"))) as cfecha,
+        --DATE(TIMESTAMP_SECONDS(CAST(cfecha / 1000000000 AS INT64))) AS cfecha,
+        date(timestamp(datetime(timestamp(cfecha), "America/Mexico_City"))) as cfecha,
         
         crazonsocial,
         cidmoneda,
